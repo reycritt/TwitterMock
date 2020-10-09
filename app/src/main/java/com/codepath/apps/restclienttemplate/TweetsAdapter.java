@@ -70,12 +70,14 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         ImageView ivProfileImage;
         TextView tvBody;
         TextView tvScreenName;
+        TextView tvCreatedAt;
 
         public ViewHolder(@NonNull View itemView) {//Represents a single row in recycle
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt);
         }
 
         /*
@@ -84,7 +86,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         public void bind (Tweet tweet) {
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
-
+            tvCreatedAt.setText(tweet.createdAt);
             //Use glide for profile image
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
         }
